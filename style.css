@@ -1,0 +1,162 @@
+body{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 150px 1fr 150px;
+    height: 100vh;
+    margin: 0;
+}
+nav, main, footer{
+    display:flex;
+    grid-column: 1/4;
+    justify-content: center;
+    align-items: center;
+}
+#dart-board{
+    border-radius: 50%;
+    border: 2px solid blue;
+    background-color: black;
+    height: 500px;
+    width: 500px;
+    position: relative;
+    z-index: 3;
+}
+#outer-board{
+    border-radius: 50%;
+    border: 2px solid orange;
+    background-color: white;
+    height: 445px;
+    width: 445px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    /* z-index: 2; */
+}
+#board-center{
+    border-radius: 50%;
+    border: 2px solid grey;
+    background-color: lightgreen;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 220px;
+    left: 220px;
+    /* z-index: 3; */
+}
+#bulls-eye{
+    border-radius: 50%;
+    border: 2px solid grey;
+    background-color: rgb(253, 63, 63);
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    /* z-index: 4; */
+}
+.zone{
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    position: absolute;
+    z-index: 1;
+}
+.black{
+    border-top: 220px solid violet;
+}
+.white{
+    border-top: 220px solid burlywood;
+}
+.zone-labels{
+    color: crimson;
+    font-family: monospace;
+    font-size: 20px;
+    z-index: 3;
+}
+/* Zones */
+#zone20{
+    top: 30px;
+    left: 208px;
+}
+#zone20-label{
+    position: absolute;
+    left: 235px;
+}
+#zone1{
+    top: 38px;
+    left: 246px;
+    transform: rotate(21.5deg);
+}
+#zone1-label {
+    position: absolute;
+    top: 12px;
+    left: 320px;
+}
+#zone18{
+    top: 58px;
+    left: 280px;
+    transform: rotate(43deg);
+}
+#zone18-label{
+    position: absolute;
+    top: 55px;
+    left: 390px;
+}
+#zone4{
+    top: 90px;
+    left: 302px;
+    transform: rotate(64.5deg);
+}
+#zone4-label{
+    position: absolute;
+    top: 120px;
+    left: 450px;
+}
+#zone13{
+    top: 128px;
+    left: 312px;
+    transform: rotate(86deg);
+}
+#zone13-label{
+    position: absolute;
+    top: 210px;
+    left: 473px;
+}
+#zone6{
+    top: 167px;
+    left: 310px;
+    transform: rotate(107.5deg);
+}
+#zone6-label{
+    position: absolute;
+    top: 300px;
+    left: 472px;
+}
+#zone10{
+    top: 200px;
+    left: 292px;
+    transform: rotate(128.5deg);
+}
+#zone10-label{
+    position: absolute;
+    top: 374px;
+    left: 432px;
+}
+#zone15{
+    top: 220px;
+    left: 310px;
+    transform: rotate(150deg);
+}
+#zone15-label{
+    position: absolute;
+    top: 400px;
+    left: 500px;
+}
+#zone3{
+    top: 258px;
+    left: 208px;
+    transform: rotate(180deg);
+}
+#zone3-label{
+    position: absolute;
+    top: 475px;
+    left: 240px;
+}
