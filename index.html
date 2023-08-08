@@ -8,7 +8,77 @@
     <script defer src = 'main.js'></script>
 </head>
 <body>
-    <nav id = 'scores'></nav>
+    <nav id = 'scores'>
+        <div id = 'cpu-stats'>
+            <table>
+                <tr>
+                    <td>
+                        <span id='cpu-name'></span> Score
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 1: <span id='cpu-round1score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 2: <span id='cpu-round2score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 3: <span id='cpu-round3score'></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id = 'title'>
+            <h1>
+                Darts
+            </h1>
+        </div>
+        <div id = 'pc-stats'>
+            <table>
+                <tr>
+                    <td>
+                        <span id = 'pc-name'></span> Score
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 1: <span id='pc-round1score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 2: <span id='pc-round2score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 3: <span id='pc-round3score'></span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </nav>
+    <nav id = 'sub-nav'>
+        <div id = 'cpu-darts'>
+            <img class='cpu-dart dart' src='dart1.png' alt='Dart' />
+            <img class='cpu-dart dart' src='dart1.png' alt='Dart' />
+            <img class='cpu-dart dart' src='dart1.png' alt='Dart' />
+            <img class='cpu-dart dart' src='dart1.png' alt='Dart' />
+            <img class='cpu-dart dart' src='dart1.png' alt='Dart' />
+        </div>
+        <div id = 'pc-darts'>
+            <img class='pc-dart dart' src='dart2.png' alt='Dart'/>
+            <img class='pc-dart dart' src='dart2.png' alt='Dart'/>
+            <img class='pc-dart dart' src='dart2.png' alt='Dart'/>
+            <img class='pc-dart dart' src='dart2.png' alt='Dart' />
+            <img class='pc-dart dart' src='dart2.png' alt='Dart' />
+        </div>
+    </nav>
     <main>
         <div id = 'dart-board'>
             <div id = 'outer-board'></div>
@@ -31,9 +101,30 @@
             <span class='zone-labels' id='zone10-label'>10</span>
             <div class='zone white' id='zone15'></div>
             <span class='zone-labels' id='zone15-label'>15</span>
+            <div class='zone black' id='zone2'></div>
+            <span class='zone-labels' id='zone2-label'>2</span>
+            <div class='zone white' id='zone17'></div>
+            <span class='zone-labels' id='zone17-label'>17</span>
             <div class='zone black' id='zone3'></div>
             <span class='zone-labels' id='zone3-label'>3</span>
-            
+            <div class='zone white' id='zone19'></div>
+            <span class='zone-labels' id='zone19-label'>19</span>
+            <div class='zone black' id='zone7'></div>
+            <span class='zone-labels' id='zone7-label'>7</span>
+            <div class='zone white' id='zone16'></div>
+            <span class='zone-labels' id='zone16-label'>16</span>
+            <div class='zone black' id='zone8'></div>
+            <span class='zone-labels' id='zone8-label'>8</span>
+            <div class='zone white' id='zone11'></div>
+            <span class='zone-labels' id='zone11-label'>11</span>
+            <div class='zone black' id='zone14'></div>
+            <span class='zone-labels' id='zone14-label'>14</span>
+            <div class='zone white' id='zone9'></div>
+            <span class='zone-labels' id='zone9-label'>9</span>
+            <div class='zone black' id='zone12'></div>
+            <span class='zone-labels' id='zone12-label'>12</span>
+            <div class='zone white' id='zone5'></div>
+            <span class='zone-labels' id='zone5-label'>5</span>
         </div>
     </main>
     <footer id = 'turn'></footer>

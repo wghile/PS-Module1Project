@@ -1,15 +1,56 @@
 body{
+    background-color: black;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 150px 1fr 150px;
+    grid-template-rows: 180px 80px 1fr 50px;
     height: 100vh;
-    margin: 0;
+    margin: 0px;
 }
 nav, main, footer{
     display:flex;
     grid-column: 1/4;
     justify-content: center;
     align-items: center;
+}
+/* Nav */
+#scores{
+    justify-content: space-between;
+    color: crimson;
+    font-family: monospace;
+}
+table{
+    font-size: 20px;
+    border: 2px pink dashed;
+    padding: 10px 100px 10px 10px;
+    margin-left: 40px;
+    margin-right: 40px;
+    line-height: 0.3in;
+}
+tr:first-child > td{
+    text-decoration: underline orangered dashed;
+    /* padding-left: 65%; */
+}
+#title{
+    font-size: 40px;
+    font-family:'Courier New', Courier, monospace;
+    letter-spacing: 0.05in;
+}
+#sub-nav{
+    grid-row: 2/3;
+    justify-content: space-between;
+}
+.dart{
+    width: 40px;
+}
+#cpu-darts{
+    margin-left: 40px;
+}
+#pc-darts{
+    margin-right: 40px;
+}
+/* Main */
+main{
+    grid-row: 2/4;
 }
 #dart-board{
     border-radius: 50%;
@@ -54,8 +95,8 @@ nav, main, footer{
     /* z-index: 4; */
 }
 .zone{
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
     position: absolute;
     z-index: 1;
 }
@@ -71,92 +112,201 @@ nav, main, footer{
     font-size: 20px;
     z-index: 3;
 }
-/* Zones */
 #zone20{
     top: 30px;
-    left: 208px;
+    left: 212px;
 }
 #zone20-label{
     position: absolute;
     left: 235px;
 }
 #zone1{
-    top: 38px;
+    top: 35px;
     left: 246px;
-    transform: rotate(21.5deg);
+    transform: rotate(18.4deg);
 }
-#zone1-label {
+#zone1-label{
     position: absolute;
     top: 12px;
-    left: 320px;
+    left: 315px;
 }
 #zone18{
-    top: 58px;
-    left: 280px;
-    transform: rotate(43deg);
+    top: 51px;
+    left: 277px;
+    transform: rotate(36.5deg);
 }
 #zone18-label{
     position: absolute;
-    top: 55px;
-    left: 390px;
+    top: 47px;
+    left: 378px;
 }
 #zone4{
-    top: 90px;
+    top: 75px;
     left: 302px;
-    transform: rotate(64.5deg);
+    transform: rotate(55deg);
 }
 #zone4-label{
     position: absolute;
-    top: 120px;
-    left: 450px;
+    top: 98px;
+    left: 435px;
 }
 #zone13{
-    top: 128px;
-    left: 312px;
-    transform: rotate(86deg);
+    top: 106px;
+    left: 316px;
+    transform: rotate(73deg);
 }
 #zone13-label{
     position: absolute;
-    top: 210px;
-    left: 473px;
+    top: 170px;
+    left: 465px;
 }
 #zone6{
-    top: 167px;
-    left: 310px;
-    transform: rotate(107.5deg);
+    top: 140px;
+    left: 321px;
+    transform: rotate(91deg);
 }
 #zone6-label{
     position: absolute;
-    top: 300px;
-    left: 472px;
+    top: 240px;
+    left: 480px;
 }
 #zone10{
-    top: 200px;
-    left: 292px;
-    transform: rotate(128.5deg);
+    top: 174px;
+    left: 315px;
+    transform: rotate(109deg);
 }
 #zone10-label{
     position: absolute;
-    top: 374px;
-    left: 432px;
+    top: 312px;
+    left: 463px;
 }
 #zone15{
-    top: 220px;
-    left: 310px;
-    transform: rotate(150deg);
+    top: 204px;
+    left: 299px;
+    transform: rotate(127deg);
 }
 #zone15-label{
     position: absolute;
-    top: 400px;
-    left: 500px;
+    top: 375px;
+    left: 431px;
+}
+#zone2{
+    top: 227px;
+    left: 275px;
+    transform: rotate(145deg);
+}
+#zone2-label{
+    position: absolute;
+    top: 430px;
+    left: 382px;
+}
+#zone17{
+    top: 243px;
+    left: 245px;
+    transform: rotate(162.5deg);
+}
+#zone17-label{
+    position: absolute;
+    top: 464px;
+    left: 310px;
 }
 #zone3{
-    top: 258px;
-    left: 208px;
+    top: 248px;
+    left: 212px;
     transform: rotate(180deg);
 }
 #zone3-label{
     position: absolute;
     top: 475px;
     left: 240px;
+}
+#zone19{
+    top: 242px;
+    left: 178px;
+    transform: rotate(198deg);
+}
+#zone19-label{
+    position: absolute;
+    top: 463px;
+    left: 165px;
+}
+#zone7{
+    top: 225px;
+    left: 148px;
+    transform: rotate(216deg);
+}
+#zone7-label{
+    position: absolute;
+    top: 430px;
+    left: 100px;
+}
+#zone16{
+    top: 200px;
+    left: 124px;
+    transform: rotate(234deg);
+}
+#zone16-label {
+    position: absolute;
+    top: 370px;
+    left: 40px;
+}
+#zone8{
+    top: 169px;
+    left: 109px;
+    transform: rotate(252deg);
+}
+#zone8-label{
+    position: absolute;
+    top: 305px;
+    left: 15px;
+}
+#zone11{
+    top: 135px;
+    left: 105px;
+    transform: rotate(270deg);
+}
+#zone11-label {
+    position: absolute;
+    top: 232px;
+    left: 0px;
+}
+#zone14{
+    top: 101px;
+    left: 110px;
+    transform: rotate(288deg);
+}
+#zone14-label {
+    position: absolute;
+    top: 163px;
+    left: 12px;
+}
+#zone9{
+    top: 72px;
+    left: 126px;
+    transform: rotate(307deg);
+}
+#zone9-label{
+    position: absolute;
+    top: 100px;
+    left: 50px;
+}
+#zone12{
+    top: 50px;
+    left: 150px;
+    transform: rotate(325deg);
+}
+#zone12-label {
+    position: absolute;
+    top: 45px;
+    left: 100px;
+}
+#zone5{
+    top: 35px;
+    left: 180px;
+    transform: rotate(343deg);
+}
+#zone5-label{
+    position: absolute;
+    top: 12px;
+    left: 170px;
 }
