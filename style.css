@@ -2,11 +2,12 @@ body{
     background-color: black;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 180px 80px 1fr 50px;
+    grid-template-rows: 250px 100px 1fr;
     height: 100vh;
     margin: 0px;
+
 }
-nav, main, footer{
+nav, main{
     display:flex;
     grid-column: 1/4;
     justify-content: center;
@@ -28,9 +29,10 @@ table{
 }
 tr:first-child > td{
     text-decoration: underline orangered dashed;
-    /* padding-left: 65%; */
 }
 #title{
+    position: absolute;
+    left: 43vw;
     font-size: 40px;
     font-family:'Courier New', Courier, monospace;
     letter-spacing: 0.05in;
@@ -43,10 +45,10 @@ tr:first-child > td{
     width: 40px;
 }
 #cpu-darts{
-    margin-left: 40px;
+    margin-left: 60px;
 }
 #pc-darts{
-    margin-right: 40px;
+    margin-right: 60px;
 }
 /* Main */
 main{
@@ -54,45 +56,47 @@ main{
 }
 #dart-board{
     border-radius: 50%;
-    border: 2px solid blue;
+    border: 2px solid grey;
     background-color: black;
     height: 500px;
     width: 500px;
-    position: relative;
-    z-index: 3;
+    position: absolute;
+    top: 30vh;
+    cursor: crosshair;
+    z-index: 2;
 }
 #outer-board{
     border-radius: 50%;
-    border: 2px solid orange;
+    border: 2px solid grey;
     background-color: white;
     height: 445px;
     width: 445px;
     position: absolute;
     top: 25px;
     left: 25px;
-    /* z-index: 2; */
+    z-index: 1;
 }
 #board-center{
     border-radius: 50%;
     border: 2px solid grey;
     background-color: lightgreen;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     position: absolute;
-    top: 220px;
-    left: 220px;
-    /* z-index: 3; */
+    top: 228px;
+    left: 222px;
+    z-index: 3;
 }
 #bulls-eye{
     border-radius: 50%;
     border: 2px solid grey;
     background-color: rgb(253, 63, 63);
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     position: absolute;
     top: 8px;
     left: 8px;
-    /* z-index: 4; */
+    z-index: 4;
 }
 .zone{
     border-left: 35px solid transparent;
@@ -101,10 +105,13 @@ main{
     z-index: 1;
 }
 .black{
-    border-top: 220px solid violet;
+    border-top: 200px solid black;
 }
 .white{
-    border-top: 220px solid burlywood;
+    border-top: 200px solid white;
+}
+.zone-num{
+    font-size: 0px;
 }
 .zone-labels{
     color: crimson;
@@ -309,4 +316,22 @@ main{
     position: absolute;
     top: 12px;
     left: 170px;
+}
+button{
+    position: relative;
+    top: 150px;
+    left: 35%;
+    border: 2px solid orange;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 5px white;
+    padding: 5px 15px;  
+    font-family: monospace;
+    font-size: 30px;
+    background-color: crimson;
+    color: white;
+    transition: all 300ms ease-in-out;
+}
+button:hover{
+    color: crimson;
+    background-color: white;
 }

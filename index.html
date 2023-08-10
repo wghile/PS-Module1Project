@@ -13,22 +13,32 @@
             <table>
                 <tr>
                     <td>
-                        <span id='cpu-name'></span> Score
+                        <span id='cpu-name'></span>Score
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Round 1: <span id='cpu-round1score'></span>
+                        Round 1: <span class = 'cpu-score score' id='cpu-round1score'></span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Round 2: <span id='cpu-round2score'></span>
+                        Round 2: <span class = 'cpu-score score' id='cpu-round2score'></span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Round 3: <span id='cpu-round3score'></span>
+                        Round 3: <span class = 'cpu-score score' id='cpu-round3score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 4: <span class = 'cpu-score score' id='cpu-round4score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 5: <span class = 'cpu-score score' id='cpu-round5score'></span>
                     </td>
                 </tr>
             </table>
@@ -47,17 +57,27 @@
                 </tr>
                 <tr>
                     <td>
-                        Round 1: <span id='pc-round1score'></span>
+                        Round 1: <span class = 'pc-score score' id='pc-round1score'></span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Round 2: <span id='pc-round2score'></span>
+                        Round 2: <span class = 'pc-score score' id='pc-round2score'></span>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        Round 3: <span id='pc-round3score'></span>
+                        Round 3: <span class = 'pc-score score' id='pc-round3score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 4: <span class = 'pc-score score' id='pc-round4score'></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Round 5: <span class = 'pc-score score' id='pc-round5score'></span>
                     </td>
                 </tr>
             </table>
@@ -85,48 +105,88 @@
             <div id='board-center'>
                 <div id='bulls-eye'></div>
             </div>
-            <div class='zone black' id = 'zone20'></div>
-            <span class = 'zone-labels' id='zone20-label'>20</span>
-            <div class='zone white' id='zone1'></div>
+            <div class='zone black' id = 'zone20'>
+                <span class='zone-num'>20</span>
+            </div>
+            <span class='zone-labels' id='zone20-label'>20</span>
+            <div class='zone white' id='zone1'>
+                <span class='zone-num'>1</span>
+            </div>
             <span class='zone-labels' id='zone1-label'>1</span>
-            <div class='zone black' id='zone18'></div>
+            <div class='zone black' id='zone18'>
+                <span class='zone-num'>18</span>
+            </div>
             <span class='zone-labels' id='zone18-label'>18</span>
-            <div class='zone white' id='zone4'></div>
+            <div class='zone white' id='zone4'>
+                <span class='zone-num'>4</span>
+            </div>
             <span class='zone-labels' id='zone4-label'>4</span>
-            <div class='zone black' id='zone13'></div>
+            <div class='zone black' id='zone13'>
+                <span class='zone-num'>13</span>
+            </div>
             <span class='zone-labels' id='zone13-label'>13</span>
-            <div class='zone white' id='zone6'></div>
+            <div class='zone white' id='zone6'>
+                <span class='zone-num'>6</span>
+            </div>
             <span class='zone-labels' id='zone6-label'>6</span>
-            <div class='zone black' id='zone10'></div>
+            <div class='zone black' id='zone10'>
+                <span class='zone-num'>10</span>
+            </div>
             <span class='zone-labels' id='zone10-label'>10</span>
-            <div class='zone white' id='zone15'></div>
+            <div class='zone white' id='zone15'>
+                <span class='zone-num'>15</span>
+            </div>
             <span class='zone-labels' id='zone15-label'>15</span>
-            <div class='zone black' id='zone2'></div>
+            <div class='zone black' id='zone2'>
+                <span class='zone-num'>2</span>
+            </div>
             <span class='zone-labels' id='zone2-label'>2</span>
-            <div class='zone white' id='zone17'></div>
+            <div class='zone white' id='zone17'>
+                <span class='zone-num'>17</span>
+            </div>
             <span class='zone-labels' id='zone17-label'>17</span>
-            <div class='zone black' id='zone3'></div>
+            <div class='zone black' id='zone3'>
+                <span class='zone-num'>3</span>
+            </div>
             <span class='zone-labels' id='zone3-label'>3</span>
-            <div class='zone white' id='zone19'></div>
+            <div class='zone white' id='zone19'>
+                <span class='zone-num'>19</span>
+            </div>
             <span class='zone-labels' id='zone19-label'>19</span>
-            <div class='zone black' id='zone7'></div>
+            <div class='zone black' id='zone7'>
+                <span class='zone-num'>7</span>
+            </div>
             <span class='zone-labels' id='zone7-label'>7</span>
-            <div class='zone white' id='zone16'></div>
+            <div class='zone white' id='zone16'>
+                <span class='zone-num'>16</span>
+            </div>
             <span class='zone-labels' id='zone16-label'>16</span>
-            <div class='zone black' id='zone8'></div>
+            <div class='zone black' id='zone8'>
+                <span class='zone-num'>8</span>
+            </div>
             <span class='zone-labels' id='zone8-label'>8</span>
-            <div class='zone white' id='zone11'></div>
+            <div class='zone white' id='zone11'>
+                <span class='zone-num'>11</span>
+            </div>
             <span class='zone-labels' id='zone11-label'>11</span>
-            <div class='zone black' id='zone14'></div>
+            <div class='zone black' id='zone14'>
+                <span class='zone-num'>14</span>
+            </div>
             <span class='zone-labels' id='zone14-label'>14</span>
-            <div class='zone white' id='zone9'></div>
+            <div class='zone white' id='zone9'>
+                <span class='zone-num'>9</span>
+            </div>
             <span class='zone-labels' id='zone9-label'>9</span>
-            <div class='zone black' id='zone12'></div>
+            <div class='zone black' id='zone12'>
+                <span class='zone-num'>12</span>
+            </div>
             <span class='zone-labels' id='zone12-label'>12</span>
-            <div class='zone white' id='zone5'></div>
+            <div class='zone white' id='zone5'>
+                <span class='zone-num'>5</span>
+            </div>
             <span class='zone-labels' id='zone5-label'>5</span>
         </div>
+        <button>Start</button>
     </main>
-    <footer id = 'turn'></footer>
 </body>
 </html>
