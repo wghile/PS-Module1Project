@@ -1,6 +1,6 @@
 //Naming PC
-// let pcName = prompt("Enter player name")
-let pcName = 'joe'
+let pcName = prompt("Enter player name")
+// let pcName = 'joe'
 
 class Player{
     constructor(name, accuracy){
@@ -13,26 +13,94 @@ class Player{
             board.addEventListener('click', this.throwDart)
         }else{
             alert('Your dart will be randomly thrown!')
-            let randomZone = Math.floor(Math.random() * 20 + 1)
-            pcScore[round].textContent = randomZone
+            let randomZone = Math.floor(Math.random() * 20 + 1)     //random # between 1 and 20
+            pcScore[roundsArray[0]].textContent = randomZone
+            if(pcDartList.hasChildNodes()){
+                pcDartList.removeChild(pcDartList.children[0])
+            }
+            alert(`Now it\'s ${cpu.name}\'s turn`)
+            cpu.randomGenerator()
         }
     }
     throwDart(evt){
         for(let i = 0; i < zones.length; i++){
             if(evt.target === zones[i]){
-                pcScore[round].textContent = zoneNums[i]
+                pcScore[roundsArray[0]].textContent = zoneNums[i]
             }else if(evt.target === center){
-                pcScore[round].textContent = '25'
+                pcScore[roundsArray[0]].textContent = '25'
             }else if(evt.target === bullsEye){
-                pcScore[round].textContent = '50'
+                pcScore[roundsArray[0]].textContent = '50'
             }
         }
+        if(pcDartList.hasChildNodes()){
+            pcDartList.removeChild(pcDartList.children[0])
+        }
+        alert(`Now it\'s ${cpu.name}\'s turn`)
+        cpu.randomGenerator()
     }
-
+    randomGenerator(){
+        if(this.accuracy >= Math.random()){
+            let randomNums = [25, 50]
+            let randomPick = randomNums[Math.floor(Math.random() * 2)]
+            cpuScore[roundsArray[0]].textContent = randomPick
+        }else{
+            alert(`${cpu.name}\'s dart will be randomly thrown!`)
+            let randomZone = Math.floor(Math.random() * 10 + 1)     //random # between 1 and 10
+            cpuScore[roundsArray[0]].textContent = randomZone
+        }
+        if(cpuDartList.hasChildNodes()){
+            cpuDartList.removeChild(cpuDartList.children[0])
+        }
+        button.textContent = 'Next Round'
+        roundsArray.shift()
+        if(roundsArray.length > 0){
+            return
+        }else{
+            button.textContent = 'Game Over'
+            button.removeEventListener('click', pc.accuracyCheck)
+            this.results()
+        }
+        // this.gameReset()
+    }
+    gameReset(){
+        let reset = prompt('Would you like to play again?')
+        reset = reset.toLocaleLowerCase()
+        if(reset === 'yes'){
+            location.reload()
+        }else if(reset === 'no'){
+            window.alert('Thanks for playing!')
+        }else{
+            this.gameReset()
+        }
+    }
+    results(){
+        let pcRoundScores = []
+        let cpuRoundScores = []
+        let y = 0
+        while(y < 5){
+            pcRoundScores.push(Number(pcScore[y].textContent))
+            cpuRoundScores.push(Number(cpuScore[y].textContent))
+            y++
+        }
+        const pcTotal = pcRoundScores.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+        const cpuTotal = cpuRoundScores.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
+        cpuDartList.textContent = `Total: ${cpuTotal}`
+        cpuDartList.style.marginLeft = '125px'
+        pcDartList.textContent = `Total: ${pcTotal}`
+        if(pcTotal > cpuTotal){
+            title.textContent = 'YOU WON!'
+        }else if(pcTotal < cpuTotal){
+            title.textContent = `YOU LOST`
+        }else{
+            title.textContent = 'IT\'S A TIE!'
+        }
+    }
 }
 
 const cpu = new Player('Gambit', Math.random())
-const pc = new Player(pcName, 0.65)
+const pc = new Player(pcName, 0.95)
+console.log(cpu.accuracy)
+console.log(pc.accuracy)
 
 const playerName = document.querySelector('#pc-name')
 playerName.textContent = `${pcName}\'s`
@@ -42,7 +110,7 @@ cpuName.textContent = `${cpu.name}\'s `
 const zones = [...document.querySelectorAll('.zone')]
 const zoneLabel = document.querySelectorAll('.zone-labels')
 const pcScore = [...document.querySelectorAll('.pc-score')]
-console.log(pcScore)
+const cpuScore = [...document.querySelectorAll('.cpu-score')]
 
 const board = document.querySelector('#dart-board')
 const center = document.querySelector('#board-center')
@@ -50,13 +118,20 @@ const bullsEye = document.querySelector('#bulls-eye')
 
 const button = document.querySelector('button')
 
+const pcDartList = document.querySelector('#pc-darts')
+const pcDarts = [...document.querySelectorAll('.pc-dart')]
+const cpuDartList = document.querySelector('#cpu-darts')
+const cpuDarts = [...document.querySelectorAll('.cpu-dart')]
+
+const title = document.querySelector('#title')
+
 let zoneNums = []
 zoneLabel.forEach((element) =>{
     zoneNums.push(element.textContent)
 })
 
-
 //Actions
+let roundsArray = [0, 1, 2, 3, 4]
 button.addEventListener('click', pc.accuracyCheck)
 
 
