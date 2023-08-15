@@ -1,6 +1,5 @@
 //Naming PC
 let pcName = prompt("Enter player name")
-// let pcName = 'joe'
 
 class Player{
     constructor(name, accuracy){
@@ -8,9 +7,9 @@ class Player{
         this.accuracy = accuracy;
     }
     accuracyCheck(){
-        if(this.accuracy >= Math.random()){
+        if(pc.accuracy > Math.random()){
             alert('Press anywhere on the board to throw your dart')
-            board.addEventListener('click', this.throwDart)
+            board.addEventListener('click', pc.throwDart)
         }else{
             alert('Your dart will be randomly thrown!')
             let randomZone = Math.floor(Math.random() * 20 + 1)     //random # between 1 and 20
@@ -32,6 +31,7 @@ class Player{
                 pcScore[roundsArray[0]].textContent = '50'
             }
         }
+        // document.addEventListener('click', pcArrowThrow)
         if(pcDartList.hasChildNodes()){
             pcDartList.removeChild(pcDartList.children[0])
         }
@@ -56,11 +56,12 @@ class Player{
         if(roundsArray.length > 0){
             return
         }else{
-            button.textContent = 'Game Over'
-            button.removeEventListener('click', pc.accuracyCheck)
             this.results()
+            button.textContent = 'Game Over - Play again?'
+            button.style.fontSize = '20px'
+            button.removeEventListener('click', pc.accuracyCheck)
+            button.addEventListener('click', this.gameReset)
         }
-        // this.gameReset()
     }
     gameReset(){
         let reset = prompt('Would you like to play again?')
@@ -98,7 +99,7 @@ class Player{
 }
 
 const cpu = new Player('Gambit', Math.random())
-const pc = new Player(pcName, 0.95)
+const pc = new Player(pcName, 0.6)
 console.log(cpu.accuracy)
 console.log(pc.accuracy)
 
@@ -125,6 +126,8 @@ const cpuDarts = [...document.querySelectorAll('.cpu-dart')]
 
 const title = document.querySelector('#title')
 
+const main = document.querySelector('main')
+
 let zoneNums = []
 zoneLabel.forEach((element) =>{
     zoneNums.push(element.textContent)
@@ -134,7 +137,22 @@ zoneLabel.forEach((element) =>{
 let roundsArray = [0, 1, 2, 3, 4]
 button.addEventListener('click', pc.accuracyCheck)
 
-
+// function pcArrowThrow(evt){
+//     const pcArrow = document.createElement('div')
+//     pcArrow.setAttribute('class', 'arrow')
+//     pcArrow.textContent = '🔹'
+//     pcArrow.style.zIndex = '2'
+//     pcArrow.left = evt.pageX
+//     pcArrow.top = evt.pageY
+//     main.appendChild(pcArrow)
+// }
+// function cpuArrowThrow(evt){
+//     const cpuArrow = document.createElement('div')
+//     cpuArrow.textContent = '🔸'
+//     cpuArrow.style.visibility = "visible";
+//     cpuArrow.left = evt.pageX
+//     cpuArrow.top = evt.pageY
+// }
 
 
 

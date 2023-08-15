@@ -69,19 +69,40 @@ main{
     position: absolute;
     top: 30vh;
     cursor: crosshair;
-    z-index: 2;
+    z-index: 0;
 }
-#outer-board{
+#doubles{
     border-radius: 50%;
     border: 2px solid grey;
-    background-color: white;
-    height: 445px;
-    width: 445px;
+    height: 440px;
+    width: 440px;
     position: absolute;
     top: 25px;
     left: 25px;
     z-index: 1;
 }
+/* #doubles {
+    border-radius: 50%;
+    border: 10px solid lightgreen;
+    background-color: transparent;
+    height: 425px;
+    width: 425px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 2;
+} */
+/* #triples{
+    border-radius: 50%;
+    border: 8px solid rgb(253, 63, 63);
+    background-color: transparent;
+    height: 225px;
+    width: 225px;
+    position: absolute;
+    top: 128px;
+    left: 126px;
+    z-index: 2;
+} */
 #board-center{
     border-radius: 50%;
     border: 2px solid grey;
@@ -89,9 +110,9 @@ main{
     height: 45px;
     width: 45px;
     position: absolute;
-    top: 228px;
+    top: 222px;
     left: 222px;
-    z-index: 3;
+    z-index: 2;
 }
 #bulls-eye{
     border-radius: 50%;
@@ -102,7 +123,7 @@ main{
     position: absolute;
     top: 8px;
     left: 8px;
-    z-index: 4;
+    z-index: 2;
 }
 .zone{
     border-left: 35px solid transparent;
@@ -123,7 +144,7 @@ main{
     color: crimson;
     font-family: monospace;
     font-size: 20px;
-    z-index: 3;
+    z-index: 1;
 }
 #zone20{
     top: 30px;
