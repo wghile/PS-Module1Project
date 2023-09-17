@@ -2,7 +2,7 @@ Link to Live Site here: https://wghile.github.io/darts-PSMod1/
 
 ## Overview
 
-This project is my first game built while enrolled in the Per Scholas Software Engineering course. Players will go against the computer to see who can score the most points in a classic game of darts.
+This project is a game that was a deliverable for the Per Scholas Software Engineering course, mainly using classes to build the game. Players will go against the computer to see who can score the most points in a classic game of darts.
 
 ## Game Play
 
