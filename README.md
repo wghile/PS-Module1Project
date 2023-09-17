@@ -14,7 +14,7 @@ Built with HTML, CSS, JavaScript
 
 ## Challenges
 
-Designing the board was a VERY tedious process... I wanted to try to replicate a dart board using CSS. The sizing and placement of the different zones (black and white triangles) especially were time-consuming. Also, I'm missing the triple and double rings which were difficult to implement. In terms of styling it was simple to add but given that the z-index would've been higher than the board and the zones, it essentially blocked the zones. So when the player had a chance to 'throw' the dart, it was not registering. (I had built the game so that each zone had a function where depending on the evt.target, the score associated with that zone would be recorded.)
+Designing the board was a VERY tedious process... I wanted to try to replicate a dart board using CSS. The sizing and placement of the different zones in particular, was time-consuming. Also, I'm missing the triple and double rings which were difficult to implement. In terms of styling it was simple to add but given that the z-index would've needed to be higher than the board and the zones to be visible, it also blocked the zones. So when the player had a chance to 'throw' the dart, it was not registering. (I had built the game so that a function outputted the value of the zone depending where the user clicked on the board.)
 
 Another challenge I faced was trying to implement animation. To add some dynamics to the page, I think it would've been cool to simulate a dart being thrown or at least appearing on the dartboard with some sort of sound paired along with it. This proved to be more challenging than I thought and I honestly spent too much time on the design.
 
@@ -26,9 +26,9 @@ Similar to what was said in the challenges section...
 
 - Finish up the board
 
-  - Might be better to create the board on a separate page, screenshot it and then paste it into the game to avoid issues with the design impedding the functionality
+  - Might be better to create the board on a separate page, take a screenshot of it and then add it as an img into the game to avoid issues with the design impedding the functionality
 
-- Another feature I may add is something that replaces the accuracy test. It's not a bad feature but it's just a lot of clicking and prompts that come up and seems kind of boring. Instead I was thinking at the start of each round, the player would have to guess a number and the computer would generate a random number. I'll also have another random number generator between a specific range. If the player's guess is closer, the player can select where they want to throw the dart on the board and the computer's dart will be randomly thrown. And vice versa (including if it was a tie)
+- Another feature I may add is something that replaces the accuracy test. It's not a bad feature but it's just a lot of clicking and prompts that come up and seems kind of boring. Instead I was thinking at the start of each round, the player would have to guess a number and the computer would generate a random number. I'll also have another random number generator between a specific range. If the player's guess is closer, the player can select where they want to throw the dart on the board and the computer's dart will be randomly thrown. And vice versa (including if it was a tie). Or it could even be a simple rock, paper, scissors game..
 
 ## Acknowledgements
 
